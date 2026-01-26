@@ -1,5 +1,6 @@
 <div align="center">
 https://readme-typing-svg.demolab.com/demo/?weight=600&size=26&center=true&vCenter=true&separator=%3C&lines=console.log(%22Hello%2C+World%22);%3C%E5%B0%8F%E5%BC%A0%E5%90%8C%E5%AD%A6%E7%A5%9D%E6%82%A8%E4%BB%8A%E5%A4%A9%E6%84%89%E5%BF%AB%EF%BC%81
+
 [![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&width=435&lines=console.log(%22Hello%2C%20World%22);小孙同学祝您今天愉快!&center=true&size=27)](https://git.io/typing-svg)
 
 <picture>
