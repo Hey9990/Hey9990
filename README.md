@@ -1,3 +1,5 @@
+<div align="center">
+
 [![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=26&pause=1000&center=true&vCenter=true&width=1000&separator=%3C&lines=console.log(%22Hello%2C+World%22);%3C%E5%B0%8F%E5%BC%A0%E5%90%8C%E5%AD%A6%E7%A5%9D%E6%82%A8%E4%BB%8A%E5%A4%A9%E6%84%89%E5%BF%AB%EF%BC%81)](https://git.io/typing-svg)
 
 <picture>
@@ -9,11 +11,16 @@
 <div>&nbsp;</div>
 
 <div>
-  <a href="https://x.com/sun0225SUN"><img src="https://img.shields.io/badge/Twitter-推特-blue" /></a>&emsp;
-  <a href="https://www.youtube.com/@sun0225SUN"><img src="https://img.shields.io/badge/YouTube-油管-c32136" /></a>&emsp;
-  <a href="https://blog.guoqi.dev/"><img src="https://img.shields.io/badge/Website-博客-8c36db" /></a>&emsp;
-  <a href="https://mp.guoqi.dev"><img src="https://img.shields.io/badge/WeChat-微信-07c160" /></a>&emsp;
-  <a href="https://space.bilibili.com/448488855/"><img src="https://img.shields.io/badge/Bilibili-B站-ff69b4" /></a>&emsp;
+  <!-- 注释
+  <a href=""><img src="https://img.shields.io/badge/Twitter-推特-blue" /></a>&emsp;
+  <a href=""><img src="https://img.shields.io/badge/YouTube-油管-c32136" /></a>&emsp;
+  -->
+  <a href="https://flowblog.top/"><img src="https://img.shields.io/badge/Website-博客-8c36db" /></a>&emsp;
+  <!-- 注释
+  <a href=""><img src="https://img.shields.io/badge/WeChat-微信-07c160" /></a>&emsp;
+  -->
+  <a href="https://space.bilibili.com/1783418387"><img src="https://img.shields.io/badge/Bilibili-B站-ff69b4" /></a>&emsp;
+  <a href="https://www.douyin.com/user/MS4wLjABAAAAw0ibNezwojGkIKT1bi50EoeVW9cr_YCZtN1JgS9GHeHiLG9z95ycf0z2gOxEH5BB"><img src="https://lf1-cdn-tos.bytegoofy.com/goofy/ies/douyin_web/public/favicon.ico" alt="抖音"></a>
   <!-- visitor -->
   <img src="https://komarev.com/ghpvc/?username=sun0225SUN&label=Views&color=orange&style=flat" alt="访问量统计" />&emsp;
   <!-- wakatime -->
@@ -321,18 +328,3 @@ Mac                      41 mins             ███████████�
 </div>
 
 </div>
-
-<!--
-**HelloWorld0525/HelloWorld0525** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-
-Here are some ideas to get you started:
-
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
