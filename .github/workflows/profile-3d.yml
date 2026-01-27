@@ -32,19 +32,16 @@ jobs:
           # 使用你自己的高权限 Token
           GITHUB_TOKEN:  $ {{ secrets.PROFILE_3D_TOKEN }}
           # 自动使用你的用户名：HelloWorld0525
-          USERNAME: HelloWorld0525
+          USERNAME: ${{ github.repository_owner }}
           # 可选：指定输出目录（默认是 profile-3d-contrib/）
-          OUTPUT_DIR: profile-3d-contrib
+          # OUTPUT_DIR: profile-3d-contrib
 
       # 3. 提交并推送新生成的图片
-      - name: Commit and Push Changes
+      - name: Commit & Push
         run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add .
-          if git diff-index --quiet HEAD; then
-            echo "No changes detected."
-          else
-            git commit -m "chore: auto-update 3D profile contributions"
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add -A .
+          if git commit -m "generated"; then
             git push
           fi
