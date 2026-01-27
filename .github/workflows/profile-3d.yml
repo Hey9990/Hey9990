@@ -1,52 +1,50 @@
-# 工作流名称，在 GitHub Actions 页面显示
-name: GitHub-Profile-3D-Contrib
+# 文件路径: .github/workflows/profile-3d.yml
+# 功能: 每天自动更新你的 3D 贡献图（北京时间 03:00 触发）
 
-# 触发条件
+name: Update 3D Profile Contributions
+
 on:
-  # 定时触发：使用 cron 表达式（基于 UTC 时间）
-  # 北京时间 = UTC+8，所以北京时间 00:00 = UTC 时间 16:00（前一天）
-  # cron 格式：分 时 日 月 星期
+  # 定时触发：UTC 19:00 = 北京时间次日 03:00
   schedule:
-    - cron: "0 16 * * *"   # 每天 UTC 16:00（即北京时间次日 00:00）自动运行
+    - cron: "0 19 * * *"   # 每天运行一次
 
-  # 允许在 GitHub 网页上手动触发此工作流
+  # 允许手动触发
   workflow_dispatch:
 
-# 授予工作流写入仓库内容的权限（必须！否则无法提交图片）
+# 必须授予写权限，才能提交图片
 permissions:
   contents: write
 
-# 定义一个名为 'build' 的作业
 jobs:
   build:
-    # 在最新的 Ubuntu 虚拟机上运行
     runs-on: ubuntu-latest
+    name: Generate 3D Profile for HelloWorld0525
 
-    # 作业显示名称
-    name: generate-github-profile-3d-contrib
-
-    # 具体执行步骤
     steps:
-      # 步骤 1：检出当前仓库代码到运行环境
-      - uses: actions/checkout@v5
+      # 1. 检出代码
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-      # 步骤 2：使用第三方 Action 生成 3D 贡献图
-      - uses: yoshi389111/github-profile-3d-contrib@latest
+      # 2. 生成 3D 贡献图（关键步骤）
+      - name: Generate 3D Profile Contributions
+        uses: yoshi389111/github-profile-3d-contrib@latest
         env:
-          # GitHub 提供的默认令牌，用于授权操作
+          # 使用你自己的高权限 Token
           GITHUB_TOKEN:  $ {{ secrets.PROFILE_3D_TOKEN }}
-          # 自动获取当前仓库的所有者（即你的用户名：HelloWorld0525）
-          USERNAME:  $ {{ github.repository_owner }}
+          # 自动使用你的用户名：HelloWorld0525
+          USERNAME: HelloWorld0525
+          # 可选：指定输出目录（默认是 profile-3d-contrib/）
+          OUTPUT_DIR: profile-3d-contrib
 
-      # 步骤 3：将生成的新图片提交并推送到你的仓库
-      - name: Commit & Push
+      # 3. 提交并推送新生成的图片
+      - name: Commit and Push Changes
         run: |
-          # 配置 Git 用户名和邮箱（GitHub Actions 要求）
-          git config user.name github-actions
-          git config user.email github-actions@github.com
-          # 添加所有更改（包括新生成的 SVG 图片）
-          git add -A .
-          # 如果有变化，就提交并推送
-          if git commit -m "chore: auto-update 3D profile contributions"; then
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add .
+          if git diff-index --quiet HEAD; then
+            echo "No changes detected."
+          else
+            git commit -m "chore: auto-update 3D profile contributions"
             git push
           fi
