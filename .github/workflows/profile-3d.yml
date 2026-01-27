@@ -1,0 +1,52 @@
+# 工作流名称，在 GitHub Actions 页面显示
+name: GitHub-Profile-3D-Contrib
+
+# 触发条件
+on:
+  # 定时触发：使用 cron 表达式（基于 UTC 时间）
+  # 北京时间 = UTC+8，所以北京时间 00:00 = UTC 时间 16:00（前一天）
+  # cron 格式：分 时 日 月 星期
+  schedule:
+    - cron: "0 16 * * *"   # 每天 UTC 16:00（即北京时间次日 00:00）自动运行
+
+  # 允许在 GitHub 网页上手动触发此工作流
+  workflow_dispatch:
+
+# 授予工作流写入仓库内容的权限（必须！否则无法提交图片）
+permissions:
+  contents: write
+
+# 定义一个名为 'build' 的作业
+jobs:
+  build:
+    # 在最新的 Ubuntu 虚拟机上运行
+    runs-on: ubuntu-latest
+
+    # 作业显示名称
+    name: generate-github-profile-3d-contrib
+
+    # 具体执行步骤
+    steps:
+      # 步骤 1：检出当前仓库代码到运行环境
+      - uses: actions/checkout@v5
+
+      # 步骤 2：使用第三方 Action 生成 3D 贡献图
+      - uses: yoshi389111/github-profile-3d-contrib@latest
+        env:
+          # GitHub 提供的默认令牌，用于授权操作（无需你手动创建！）
+          GITHUB_TOKEN:  $ {{ secrets.GITHUB_TOKEN }}
+          # 自动获取当前仓库的所有者（即你的用户名：HelloWorld0525）
+          USERNAME:  $ {{ github.repository_owner }}
+
+      # 步骤 3：将生成的新图片提交并推送到你的仓库
+      - name: Commit & Push
+        run: |
+          # 配置 Git 用户名和邮箱（GitHub Actions 要求）
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          # 添加所有更改（包括新生成的 SVG 图片）
+          git add -A .
+          # 如果有变化，就提交并推送
+          if git commit -m "chore: auto-update 3D profile contributions"; then
+            git push
+          fi
