@@ -30,7 +30,7 @@ jobs:
         uses: yoshi389111/github-profile-3d-contrib@latest
         env:
           # 使用你自己的高权限 Token
-          GITHUB_TOKEN:  $ {{ secrets.PROFILE_3D_TOKEN }}
+          GITHUB_TOKEN:  ${{ secrets.PROFILE_3D_TOKEN }}
           # 自动使用你的用户名：HelloWorld0525
           USERNAME: ${{ github.repository_owner }}
           # 可选：指定输出目录（默认是 profile-3d-contrib/）
