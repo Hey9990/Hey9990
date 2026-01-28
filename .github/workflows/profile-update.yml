@@ -34,16 +34,20 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.PROFILE_3D_TOKEN }}
 
-      #  --- 任务 2: 3D贡献图 --- -> 存入 dist/3d-contrib
+      #  --- 任务 2: 3D贡献图 --- ->
       - name: Generate 3D Profile
         uses: yoshi389111/github-profile-3d-contrib@latest
-        with:
-          # 指定输出到子文件夹
-          OUTPUT_DIR: dist/3d-contrib
-          USERNAME: ${{ github.repository_owner }}
         env:
           GITHUB_TOKEN: ${{ secrets.PROFILE_3D_TOKEN }}
+          USERNAME: ${{ github.repository_owner }}
 
+      # 手动移动 3D 图到 dist/3d-contrib 文件夹
+      - name: Move 3D files to dist
+        run: |
+          mkdir -p dist/3d-contrib
+          # 把生成的文件移动过去（这个 3D 插件比较“固执”，只能生成在默认位置在移动它）
+          mv profile-3d-contrib/* dist/3d-contrib/
+          
       # 3. 把整个 dist 文件夹推送到 output 分支
       - name: Push to Output Branch
         uses: crazy-max/ghaction-github-pages@v3.1.0
