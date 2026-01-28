@@ -1,0 +1,39 @@
+name: Generate Snake
+
+on:
+  # 每天北京时间 0:00 运行 (UTC 16:00)
+  schedule:
+    - cron: "0 16 * * *" 
+  
+  # 允许手动触发
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Generate Snake
+        uses: Platane/snk@v3
+        with:
+          # 使用你的 GitHub 用户名
+          github_user_name: ${{ github.repository_owner }}
+          # 输出如下文件：普通版、暗色版
+          outputs: |
+            dist/github-contribution-grid-snake.svg
+            dist/github-contribution-grid-snake-dark.svg?palette=github-dark
+        env:
+          # 使用你的 Token 以读取私有贡献
+          GITHUB_TOKEN: ${{ secrets.PROFILE_3D_TOKEN }}
+
+      - name: Push to Output Branch
+        uses: crazy-max/ghaction-github-pages@v3.1.0
+        with:
+          # 将生成的内容推送到 output 分支，保持主分支整洁
+          target_branch: output
+          build_dir: dist
+        env:
+          # 这里必须用 GITHUB_TOKEN 来推送，不能用自定义 Token
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
