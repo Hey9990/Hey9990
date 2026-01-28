@@ -26,11 +26,11 @@
   <!-- wakatime -->
   <a href="https://wakatime.com/@sun0225SUN"><img src="https://wakatime.com/badge/user/42d0678c-368b-448b-9a77-5d21c5b55352.svg" /></a>
 </div>
-
+snake/github-contribution-grid-snake-dark.svg
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://github.com/HelloWorld0525/HelloWorld0525/raw/output/snake/profile-night-view.svg">
-  <source media="(prefers-color-scheme: light)" srcset="https://github.com/HelloWorld0525/HelloWorld0525/raw/output/snake/profile-green-animate.svg">
-  <img alt="3D Profile" src="https://github.com/HelloWorld0525/HelloWorld0525/raw/output/snake/profile-green-animate.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="https://github.com/HelloWorld0525/HelloWorld0525/raw/output/snake/github-contribution-grid-snake-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://github.com/HelloWorld0525/HelloWorld0525/raw/output/snake/github-contribution-grid-snake.svg">
+  <img alt="3D Profile" src="https://github.com/HelloWorld0525/HelloWorld0525/raw/output/snake/github-contribution-grid-snake.svg">
 </picture>
 
 <div align="center" >
