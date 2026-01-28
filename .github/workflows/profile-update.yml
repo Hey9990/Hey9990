@@ -1,0 +1,54 @@
+name: Update Profile (Organized)
+
+on:
+  schedule:
+    - cron: "0 16 * * *" # 北京时间 00:00
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: Generate Assets
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      # 1. 创建分类文件夹 (这一步很重要，防止后面报错)
+      - name: Create Directories
+        run: |
+          mkdir -p dist/snake
+          mkdir -p dist/3d-contrib
+
+      # 2. --- 任务 1: 生成贪吃蛇 --- -> 存入 dist/snake
+      - name: Generate Snake
+        uses: Platane/snk@v3
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          # 注意这里的路径变化
+          outputs: |
+            dist/snake/github-contribution-grid-snake.svg
+            dist/snake/github-contribution-grid-snake-dark.svg?palette=github-dark
+        env:
+          GITHUB_TOKEN: ${{ secrets.PROFILE_3D_TOKEN }}
+
+      #  --- 任务 2: 3D贡献图 --- -> 存入 dist/3d-contrib
+      - name: Generate 3D Profile
+        uses: yoshi389111/github-profile-3d-contrib@latest
+        with:
+          # 指定输出到子文件夹
+          OUTPUT_DIR: dist/3d-contrib
+          USERNAME: ${{ github.repository_owner }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.PROFILE_3D_TOKEN }}
+
+      # 3. 把整个 dist 文件夹推送到 output 分支
+      - name: Push to Output Branch
+        uses: crazy-max/ghaction-github-pages@v3.1.0
+        with:
+          target_branch: output
+          build_dir: dist
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
