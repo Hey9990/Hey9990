@@ -28,17 +28,17 @@
 </div>
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://github.com/HelloWorld0525/HelloWorld0525/raw/output/github-contribution-grid-snake-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="https://github.com/HelloWorld0525/HelloWorld0525/raw/output/github-contribution-grid-snake.svg">
-  <img alt="github contribution grid snake animation" src="https://github.com/HelloWorld0525/HelloWorld0525/raw/output/github-contribution-grid-snake.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="https://github.com/HelloWorld0525/HelloWorld0525/raw/output/snake/profile-night-view.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://github.com/HelloWorld0525/HelloWorld0525/raw/output/snake/profile-green-animate.svg">
+  <img alt="3D Profile" src="https://github.com/HelloWorld0525/HelloWorld0525/raw/output/snake/profile-green-animate.svg">
 </picture>
 
 <div align="center" >
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="profile-3d-contrib/profile-night-green.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="profile-3d-contrib/profile-gitblock.svg" />
-  <img src="profile-3d-contrib/profile-gitblock.svg" />
+  <source media="(prefers-color-scheme: dark)" srcset="https://github.com/HelloWorld0525/HelloWorld0525/raw/output/3d-contrib/profile-night-green.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="https://github.com/HelloWorld0525/HelloWorld0525/raw/output/3d-contrib/profile-gitblock.svg" />
+  <img src="https://github.com/HelloWorld0525/HelloWorld0525/raw/output/3d-contrib/profile-gitblock.svg" />
 </picture>
 
 ![HTML5 Badge](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=fff&style=flat)
