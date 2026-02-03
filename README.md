@@ -23,8 +23,7 @@
   <a href="https://www.douyin.com/user/MS4wLjABAAAAw0ibNezwojGkIKT1bi50EoeVW9cr_YCZtN1JgS9GHeHiLG9z95ycf0z2gOxEH5BB"><img src="https://lf1-cdn-tos.bytegoofy.com/goofy/ies/douyin_web/public/favicon.ico" alt="抖音"></a>&nbsp;&nbsp;&nbsp;&nbsp;
   <!-- visitor -->
   <img src="https://komarev.com/ghpvc/?username=HelloWorld0525&label=Views&color=orange&style=flat" alt="访问量统计" />&emsp;
-  <!-- wakatime -->
-  <a href="https://wakatime.com/@sun0225SUN"><img src="https://wakatime.com/badge/user/42d0678c-368b-448b-9a77-5d21c5b55352.svg" /></a>
+
 </div>
 
 <!-- 贪吃蛇贡献日历 -->
